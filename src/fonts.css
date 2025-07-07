@@ -1,0 +1,7 @@
+/* src/fonts.css */
+@font-face {
+  font-family: 'Holiday';
+  src: url('./assets/font/Holiday.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
