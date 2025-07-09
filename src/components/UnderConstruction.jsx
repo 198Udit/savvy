@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../fonts.css';
 const ToteBagSVG = () => (
   <svg
-    className="w-24 h-24 mx-auto stroke-gray-400 animate-breathe"
+    className="w-24 h-24 mx-auto stroke-gray-400 animate-pulse"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 64 64"
     fill="none"
@@ -47,7 +47,7 @@ export default function UnderConstruction() {
             className="flex-1 px-4 py-3 rounded-md bg-[#2c2c2c] text-white text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500"
           />
           <button
-            type="submit"
+            type= "submit"
             className="bg-gray-100 text-[#181818] font-bold py-0.9 px-6.5 rounded-md hover:bg-gray-200 transform hover:scale-105 transition duration-200 w-full sm:w-auto"
           >
             Notify Me
