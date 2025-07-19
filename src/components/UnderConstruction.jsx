@@ -86,10 +86,16 @@ export default function App() {
       return;
     }
 
-    const GOOGLE_SHEET_WEB_APP_URL =
-      "https://script.google.com/macros/s/AKfycbyIeUJMqVff13vPCsWvCZbBdAfXscO-BTFxFYpOtaOSfpp69hv21VEhu8Bzv89nw49E/exec";
-
     try {
+      // ✅ Step 1: Get user's IP
+      const ipResponse = await fetch("https://api.ipify.org?format=json");
+      const ipData = await ipResponse.json();
+      const userIp = ipData.ip;
+
+      const GOOGLE_SHEET_WEB_APP_URL =
+        "https://script.google.com/macros/s/AKfycbyIeUJMqVff13vPCsWvCZbBdAfXscO-BTFxFYpOtaOSfpp69hv21VEhu8Bzv89nw49E/exec";
+
+      // ✅ Step 2: Send form data including IP
       await fetch(GOOGLE_SHEET_WEB_APP_URL, {
         method: "POST",
         mode: "no-cors",
@@ -101,7 +107,8 @@ export default function App() {
           email,
           phone,
           timestamp: new Date().toLocaleString(),
-          token: "SAVVYS123", // secret shared token
+          token: "SAVVYS123",
+          ip: userIp, // ✅ sending IP
         }).toString(),
       });
 
@@ -116,6 +123,7 @@ export default function App() {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#181818] px-4 text-gray-300 font-mono animate-fadeIn">
