@@ -1,2 +1,10 @@
+@font-face {
+  font-family: 'Holiday';
+  src: url('./assets/font/Holiday.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-size: x-large;
+}
+
 @import "tailwindcss";
 
